@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <title>Update medication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/style.css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" />
+    <script type="text/javascript" src="libs/vue.js"></script>
+    <script type="text/javascript" src="libs/axios.js"></script>
+    <script type="text/javascript" src="src/medication-service.js"></script>
+</head>
+
+<body>
+    <a href="index.html" target="_self"><button  class="btn" id="home">&lt;     Pagina principala</button></a>
+    <div id="update">
+        <ul>
+            <div class="wrapper-grid">
+                <div class="container" id="updateContainer">
+                    <img :src=med.image alt='med image' class="med-img">
+                    <h1 class="med-name ">{{ med.name }}, {{med.quantity}}</h1>
+                    <p>{{med.brand}} </p>
+                    <p>Substanță activă: {{med.activeSubstance}} </p>
+                    <p class="med-info ">{{ med.info }}</p>
+                    <p>Data fabricației: {{med.productionDate}}</p>
+                    <p>Data expirării: {{med.productionDate}}</p>
+                    <h2>Preț: {{med.price}}</h2>
+                    <input v-model="med.image" type="text" name="image" id="image" placeholder="Imagine..." />
+                    <input v-model="med.name" type="text" name="name" id="name" placeholder="Nume..." />
+                    <input v-model="med.brand" type="text" name="brand" id="brand" placeholder="Firma..." />
+                    <input v-model="med.activeSubstance" type="text" name="activeSubstance" id="activeSubstance" placeholder="Substanță activă..." />
+                    <input v-model="med.info" type="text" name="info" id="info" placeholder="Info..." />
+                    <input v-model="med.productionDate" type="text" name="productionDate" id="productionDate" placeholder="Data fabricației..." />
+                    <input v-model="med.expirationDate" type="text" name="expirationDate" id="expirationDate" placeholder="Data expirării..." />
+                    <input v-model="med.price" type="text" name="price" id="price" placeholder="Preț..." />
+                    <button class="btn" id="add" v-on:click="updateMed()">Update</button>
+
+
+
+                </div>
+            </div>
+        </ul>
+
+
+    </div>
+
+    <script src="src/update.js"></script>
+
+</body>
+
+</html>

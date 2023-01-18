@@ -1,0 +1,152 @@
+:root {
+    --clr-primary: #046307;
+    --clr-gray: #37474f;
+    --clr-gray-light: #b0bec5;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.appTitle {
+    color: white;
+    background-color: #046307;
+    text-align: center;
+}
+
+body {
+    color: var(--clr-gray);
+    margin: 2rem;
+}
+
+.wrapper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
+    justify-content: center;
+}
+
+.container {
+    overflow: hidden;
+    box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+    background-color: white;
+    text-align: center;
+    border-radius: 1rem;
+    position: relative;
+    margin: 0.5rem;
+    height: 670px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    background-color: #0053c0;
+    padding: 15px 15px 5px 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.med-img {
+    width: 250px;
+    height: 250px;
+}
+
+.med-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.med-info {
+    margin: 1rem 2rem;
+    font-size: 0.9rem;
+}
+
+input[type=text] {
+    position: relative;
+    display: block;
+    margin: 10px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    line-height: 200%;
+    width: 20em;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+}
+
+.btn {
+    width: 9em;
+    border: none;
+    display: grid;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
+    background-color: var(--clr-primary);
+}
+
+#add {
+    display: grid;
+    margin: auto;
+    width: 250px;
+    width: 100%;
+}
+
+#updateButton {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 0px;
+}
+
+#add {
+    margin-bottom: 0px;
+}
+
+#addContainer {
+    height: 550px;
+}
+
+#updateContainer {
+    height: 900px;
+    width: 500px;
+    position: absolute;
+    justify-self: center;
+}
+
+#updateContainer input {
+    width: 490px;
+    line-height: 20px;
+}
+
+#home {
+    position: absolute;
+    width: 200px;
+}

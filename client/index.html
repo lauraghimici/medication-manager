@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <title>Medication manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/style.css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" />
+    <script type="text/javascript" src="libs/vue.js"></script>
+    <script type="text/javascript" src="libs/axios.js"></script>
+    <script type="text/javascript" src="src/medication-service.js"></script>
+</head>
+
+<body>
+    <h1 class="appTitle">MEDICATION MANAGER</h1>
+    <div id="app">
+        <ul>
+            <div class="wrapper-grid">
+                <li v-for="(med, index) in medication ">
+                    <div class="container">
+                        <img :src=med.image alt='med image' class="med-img">
+                        <h1 class="med-name ">{{ med.name }}, {{med.quantity}}</h1>
+                        <p>{{med.brand}} </p>
+                        <p>Substanță activă: {{med.activeSubstance}} </p>
+                        <p class="med-info ">{{ med.info }}</p>
+                        <p>Data fabricației: {{med.productionDate}}</p>
+                        <p>Data expirării: {{med.expirationDate}}</p>
+                        <h2>Preț: {{med.price}}</h2>
+                        <div class="buttons">
+                            <a :href="'update.html?id='+med.id" target="_self">
+                                <button class="btn" id="update">Update</button>
+                            </a>
+
+                            <button class="btn" id="delete" v-on:click="deleteMed(index)">Delete</button>
+                        </div>
+                    </div>
+
+                </li>
+            </div>
+        </ul>
+
+        <div class="wrapper-grid">
+
+            <div class="container" id="addContainer">
+                <h1 class="med-name ">Add new medication</h1>
+                <input v-model="image" type="text" name="image" id="image" placeholder="Imagine..." />
+                <input v-model="name" type="text" name="name" id="name" placeholder="Nume..." />
+                <input v-model="quantity" type="text" name="quantity" id="name" placeholder="Cantitate..." />
+                <input v-model="brand" type="text" name="brand" id="brand" placeholder="Firma..." />
+                <input v-model="activeSubstance" type="text" name="activeSubstance" id="activeSubstance" placeholder="Substanță activă..." />
+                <input v-model="info" type="text" name="info" id="info" placeholder="Info..." />
+                <input v-model="productionDate" type="text" name="productionDate" id="productionDate" placeholder="Data fabricației..." />
+                <input v-model="expirationDate" type="text" name="expirationDate" id="expirationDate" placeholder="Data expirării..." />
+                <input v-model="price" type="text" name="price" id="price" placeholder="Preț..." />
+                <button class="btn" id="add" v-on:click="addMed()">Save</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="src/app.js "></script>
+
+</body>
+
+</html>
